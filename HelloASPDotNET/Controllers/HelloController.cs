@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloASPDotNET.Controllers
 {
-    [Route("helloworld/")] //all respond to hellowrld
+    [Route("helloworld/")] //all respond to hellowrld CLASS level attribute
     public class HelloController : Controller
     {
         //GET: /<controller>/
@@ -24,6 +24,9 @@ namespace HelloASPDotNET.Controllers
         //GET: /hellow/welcome
         //[HttpGet]
         //[Route("/helloworld/welcome/{name?}")] //curly braces designates the VALUE of the variable, ? designates the value is optional
+
+        //now the Welcome() method below respondst to TWO types of requests, GET and POST
+        //GET: /helloworld
         [HttpGet("welcome/{name?}")]
         //POST: /helloworld/
         [HttpPost]
