@@ -16,6 +16,12 @@ namespace HelloASPDotNET.Controllers
         {
             string html = "<form method='post' action='/helloworld/'>" +
                 "<input type='text' name='name' />" +
+                "<option value=''>--Please choose an option--</option>" +
+                "<option value='English'>English</option>" +
+                "<option value='French'>French</option>" +
+                "<option value='German'>German</option>" +
+                "<option value='Japanese'>Japanese</option>" +
+                "<option value='Spanish'>Spanish</option>" +
                 "<input type='submit' value='Greet Me!' />" +
                 "</form>";
             return Content(html, "text/html");
