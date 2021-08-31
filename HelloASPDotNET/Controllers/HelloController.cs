@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace HelloASPDotNET.Controllers
 {
+    [Route("helloworld/")] //all respond to hellowrld
     public class HelloController : Controller
     {
         //GET: /<controller>/
         [HttpGet]
-        [Route("/helloworld/")]
+        //[Route("/helloworld/")] //no longer needed with class level attribute
         public IActionResult Index()
         {
             string html = "<form method='post' action='/helloworld/'>" +
@@ -23,10 +24,10 @@ namespace HelloASPDotNET.Controllers
         //GET: /hellow/welcome
         //[HttpGet]
         //[Route("/helloworld/welcome/{name?}")] //curly braces designates the VALUE of the variable, ? designates the value is optional
-        
+        [HttpGet("welcome/{name?}")]
         //POST: /helloworld/
         [HttpPost]
-        [Route("/helloworld")]
+        //[Route("/helloworld/")] //no longer needed with class level attribute
         public IActionResult Welcome(string name = "World") //default parameter value
         {
             return Content("<h1>Welcome to my app, " + name + "!</h1>", "text/html");
