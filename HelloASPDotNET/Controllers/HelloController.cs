@@ -29,7 +29,7 @@ namespace HelloASPDotNET.Controllers
         //GET: /helloworld
         [HttpGet("welcome/{name?}")]
         //POST: /helloworld/
-        [HttpPost]
+        [HttpPost("welcome")]
         //[Route("/helloworld/")] //no longer needed with class level attribute
         public IActionResult Welcome(string name = "World") //default parameter value
         {
