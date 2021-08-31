@@ -23,6 +23,8 @@ namespace HelloASPDotNET.Controllers
         //GET: /hellow/welcome
         //[HttpGet]
         //[Route("/helloworld/welcome/{name?}")] //curly braces designates the VALUE of the variable, ? designates the value is optional
+        
+        //POST: /helloworld/
         [HttpPost]
         [Route("/helloworld")]
         public IActionResult Welcome(string name = "World") //default parameter value
