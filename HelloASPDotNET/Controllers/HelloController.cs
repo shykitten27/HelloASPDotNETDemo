@@ -16,5 +16,13 @@ namespace HelloASPDotNET.Controllers
             string html = "<h1>Hello World!</h1>";
             return Content(html, "text/html");
         }
+
+        //GET: /hellow/welcome
+        [HttpGet]
+        [Route("/helloworld/welcome/{name?}")] //curly braces designates the VALUE of the variable, ? designates the value is optional
+        public IActionResult Welcome(string name = "World")
+        {
+            return Content("<h1>Welcome to my app, " + name + "!</h1>", "text/html");
+        }
     }
 }
