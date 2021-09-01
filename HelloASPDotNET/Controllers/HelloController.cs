@@ -16,7 +16,7 @@ namespace HelloASPDotNET.Controllers
         {
             string html = "<form method='post' action='/helloworld/'>" +
                 "<input type='text' name='name' />" +
-                "<select name='Language' id='Language - select'>"+
+                "<select name='Language' id='Language - select'>" +
                 "<option value=''>--Please choose a language--</option>" +
                 "<option value='English'>English</option>" +
                 "<option value='French'>French</option>" +
@@ -41,6 +41,33 @@ namespace HelloASPDotNET.Controllers
         public IActionResult Welcome(string name = "World") //default parameter value
         {
             return Content("<h1>Welcome to my app, " + name + "!</h1>", "text/html");
+        }
+
+        public IActionResult CreateMessage(string name = "World", string language = "English")
+        {
+            string greeting = "";
+
+            if (language == "English")
+            {
+                greeting = "Hello, ";
+            }
+            else if (language == "French")
+            {
+                greeting = "Bonjour, ";
+            }
+            else if (language == "German")
+            {
+                greeting = "Halo, ";
+            }
+            else if (language == "Japanese")
+            {
+                greeting = "Kon'nichiwa, ";
+            }
+            else
+            {
+                greeting = "Hola, ";
+            }
+            return Content("<h1>" + greeting + name + "!</h1>", "text/html");
         }
     }
 }
